@@ -22,7 +22,7 @@ def add_student():
         host="localhost",
         user="root",
         #password=os.getenv("DB_PASSWORD"),
-        password="Sinothando@2005",
+       
         database="student_system"
     )
     
