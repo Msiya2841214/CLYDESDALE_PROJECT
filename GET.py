@@ -19,7 +19,7 @@ def search_students():
         host="localhost",
         user="root",
         #password=os.getenv("DB_PASSWORD"),
-        password="Sinothando@2005",
+        
         database="student_system"
     )
     
