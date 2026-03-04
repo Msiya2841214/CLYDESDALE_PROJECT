@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request
 import mysql.connector
 import os
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 
-#load_dotenv()
+load_dotenv()
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("Certificate.html")
+    return render_template("index.html")
 
 @app.route('/add_student',methods=['POST'])
 def add_student():
@@ -19,11 +19,10 @@ def add_student():
     date_ = request.form['Date']
     
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        #password=os.getenv("DB_PASSWORD"),
-       
-        database="student_system"
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME")
     )
     
     
